@@ -6,6 +6,7 @@ class Point {
     public function __construct(num $x = 0, num $y = 0) {
         $this->x = (float)$x;
         $this->y = (float)$y;
+        // ++self::$counter;
         ++Point::$counter;
     }
 
