@@ -1,13 +1,20 @@
 class Point {
-    public static int $counter; 
+    public static int $counter = 0; 
     private float $x;
     private float $y;
 
     public function __construct(num $x = 0, num $y = 0) {
         $this->x = (float)$x;
         $this->y = (float)$y;
+        
+        // The following 4 statements are the same
         // ++self::$counter;
-        ++Point::$counter;
+        // ++Point::$counter;
+        // ++static::$counter;
+        ++$this::$counter;
+        
+        // This doesn't work
+        // ++$counter;
     }
 
     public function __toString(): string {
